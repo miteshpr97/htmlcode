@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      
+    </style>
+</head>
+<body>
+    <input type="text" id="item" placeholder="Add a new task...">
+    <ul id="to-do-box"></ul>
+    
+    <script>
+        
+        const item = document.querySelector("#item");
+        const toDoBox = document.querySelector("#to-do-box");
+
+        item.addEventListener("keyup", function (event) {
+            if (event.key === "Enter") {
+                addToDo(this.value);
+                this.value = "";
+            }
+        });
+
+        const addToDo = (task) => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `
+                ${task}
+                <div class="edit"><i class="far fa-edit"></i></div>
+                <div class="delete"><i class="fas fa-times"></i></div>
+            `;
+
+            const deleteButton = listItem.querySelector(".delete");
+            deleteButton.addEventListener("click", function () {
+                listItem.remove();
+            });
+
+            const editButton = listItem.querySelector(".edit");
+            editButton.addEventListener("click", function () {
+                editTask(listItem);
+            });
+
+            toDoBox.appendChild(listItem);
+        };
+
+        function editTask(listItem) {
+            const currentText = listItem.firstChild.textContent.trim();
+            const editText = prompt("Edit task:", currentText);
+
+            if (editText !== null) {
+                listItem.firstChild.textContent = editText;
+            }
+        }
+    </script>
+</body>
+</html>

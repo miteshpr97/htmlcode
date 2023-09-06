@@ -1,0 +1,424 @@
+// import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Container from '@mui/material/Container';
+import MainCard from 'ui-component/cards/MainCard';
+
+const PlanJobs = () => {
+  const [value, setValue] = React.useState(0);
+  const [data, setData] = useState([]);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  useEffect(() => {
+    // Retrieve data from local storage
+    const storedData = JSON.parse(localStorage.getItem('registrationData')) || [];
+    setData(storedData);
+
+    console.log('Data:', data);
+  }, []);
+
+  return (
+    <MainCard title="Plan Jobs">
+      <Box className="section_one pt-3 ps-3 pe-3 pb-3 mt-3   backgroundColor: '#f5f5f5'">
+        <Container maxWidth="lg">
+          <Tabs value={value} onChange={handleChange} variant="scrollable" scrollButtons="auto" aria-label="Plan Jobs Tabs">
+            <Tab label="All Jobs" />
+            <Tab label="Open" />
+            <Tab label="Closed" />
+            <Tab label="Planned" />
+            <Tab label="Loan" />
+          </Tabs>
+        </Container>
+
+        <Box className="tab-content " id="pills-tabContent">
+          <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <Container>
+              <Box>
+                <ul className="responsive-table">
+                  <li className="s">
+                    <Grid container>
+                      <Grid item xs={2}>
+                        <Typography variant="subtitle1">{data.jobNumber}</Typography>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Typography variant="subtitle1">Job Date</Typography>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Typography variant="subtitle1">Job Summary</Typography>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Typography variant="subtitle1">Pick Up Lock</Typography>
+                      </Grid>
+                      <Grid item xs={2}>
+                        <Typography variant="subtitle1">Delivery Lock</Typography>
+                      </Grid>
+                      <Grid item xs={1}>
+                        <Typography variant="subtitle1">Plan Job</Typography>
+                      </Grid>
+                      <Grid item xs={1}>
+                        <Typography variant="subtitle1">Status</Typography>
+                      </Grid>
+                    </Grid>
+                  </li>
+                  <Grid container>
+                    <Grid item xs={2}>
+                      <Typography variant="body2">kk</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography variant="body2">hh</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography variant="body2">hhh</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography variant="body2">jjj</Typography>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Typography variant="body2">jjj</Typography>
+                    </Grid>
+                    <Grid item xs={1}>
+                      <Typography variant="body2">hh</Typography>
+                    </Grid>
+                    <Grid item xs={1}>
+                      <Typography variant="body2">hh</Typography>
+                    </Grid>
+                  </Grid>
+                </ul>
+              </Box>
+            </Container>
+          </div>
+        </Box>
+      </Box>
+    </MainCard>
+  );
+};
+
+export default PlanJobs;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react';
+// import { Box, Typography, FormControl, Select, MenuItem, InputLabel, Grid, TextField, Button, Container } from '@mui/material';
+
+// const newJobCreate = () => {
+//   return (
+//     <div>
+//       <Box className="tab-pane fade show active" role="tabpanel">
+//         <Typography variant="h4" mt={4}>
+//           Job Information
+//         </Typography>
+//         <Typography variant="h5" mt={2}>
+//           Create Job
+//         </Typography>
+
+//         <FormControl fullWidth margin="normal">
+//           <Typography variant="subtitle1">Select Customer</Typography>
+//           <Select defaultValue="TSL-R AND D" variant="outlined">
+//             <MenuItem value="TSL-R AND D">TSL-R AND D</MenuItem>
+//             <MenuItem value="1">TATA LONG PRODUCTS</MenuItem>
+//             <MenuItem value="2">DB SHANKER</MenuItem>
+//             <MenuItem value="3">TCI India</MenuItem>
+//           </Select>
+//         </FormControl>
+//       </Box>
+
+//       <Grid container spacing={3}>
+//         <Grid item xs={4} md={4}>
+//           <TextField label="Job Number" placeholder="J1233445" fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={4}>
+//           <TextField label="Job Start Date" placeholder="" fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={4}>
+//           <TextField label="Job Completion Date" placeholder="" fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={12} md={6}>
+//           <TextField label="Job Summary" placeholder="LDFLDS&2344" fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={3}>
+//           <FormControl fullWidth variant="outlined">
+//             <InputLabel>Gate Pass Type</InputLabel>
+//             <Select label="Gate Pass Type" defaultValue="ICF">
+//               <MenuItem value="ICF">ICF</MenuItem>
+//               <MenuItem value="1">Gate Pass</MenuItem>
+//               <MenuItem value="2">Returnable</MenuItem>
+//               <MenuItem value="3">ICF</MenuItem>
+//             </Select>
+//           </FormControl>
+//         </Grid>
+
+//         <Grid item xs={3}>
+//           <FormControl fullWidth variant="outlined">
+//             <InputLabel>Gate Pass number</InputLabel>
+//             <Select label="Gate Pass number" defaultValue="Mr.Suleman">
+//               <MenuItem value="Mr.Suleman">Mr.Suleman</MenuItem>
+//               <MenuItem value="1">Mr.Anil</MenuItem>
+//               <MenuItem value="2">Mr.Rohit</MenuItem>
+//               <MenuItem value="3">Mr.Kamal</MenuItem>
+//             </Select>
+//           </FormControl>
+//         </Grid>
+
+//         <Grid item xs={12} md={6}>
+//           <FormControl fullWidth variant="outlined">
+//             <InputLabel>Client | Job Requester</InputLabel>
+//             <Select label="Client | Job Requester" defaultValue="Mr.Suleman">
+//               <MenuItem value="Mr.Suleman">Mr.Suleman</MenuItem>
+//               <MenuItem value="1">Mr.Anil</MenuItem>
+//               <MenuItem value="2">Mr.Rohit</MenuItem>
+//               <MenuItem value="3">Mr.Kamal</MenuItem>
+//             </Select>
+//           </FormControl>
+//         </Grid>
+
+//         <Grid item xs={12} md={6}>
+//           <FormControl fullWidth variant="outlined">
+//             <InputLabel>Transaction Type</InputLabel>
+//             <Select label="Inside To Inside" defaultValue="Inside To Inside">
+//               <MenuItem value="Inside To Inside">Inside To Inside</MenuItem>
+//               <MenuItem value="1">Inside To Outside</MenuItem>
+//               <MenuItem value="2">Outside To Inside</MenuItem>
+//               <MenuItem value="3">Outside To Outside</MenuItem>
+//             </Select>
+//           </FormControl>
+//         </Grid>
+
+//         <Grid item xs={12} md={6}>
+//           <FormControl fullWidth variant="outlined">
+//             <InputLabel>Researcher Name</InputLabel>
+//             <Select label="Researcher Name" defaultValue="EDGE Corp">
+//               <MenuItem value="EDGE Corp">EDGE Corp</MenuItem>
+//               <MenuItem value="1">Digi Mech</MenuItem>
+//               <MenuItem value="2">TSL1</MenuItem>
+//               <MenuItem value="3">Long Pro 23</MenuItem>
+//             </Select>
+//           </FormControl>
+//         </Grid>
+
+//         <Grid item xs={12} md={6}>
+//           <TextField label="Actual Weight in KG" placeholder="" fullWidth variant="outlined" className="mb-3" />
+//         </Grid>
+
+//         <Grid item xs={6}>
+//           <TextField label="Pickup Location | Address" placeholder="Mr.Suleman" fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={6} md={6}>
+//           <FormControl fullWidth variant="outlined">
+//             <InputLabel>Package Type</InputLabel>
+//             <Select label="Package Type" defaultValue="Bags">
+//               <MenuItem value="Bags">Bags</MenuItem>
+//               <MenuItem value="1">PCS</MenuItem>
+//               <MenuItem value="2">Drum</MenuItem>
+//               <MenuItem value="3">Box</MenuItem>
+//             </Select>
+//           </FormControl>
+//         </Grid>
+
+//         <Grid item xs={12}>
+//           <TextField label="Delivery Location | Address" placeholder="" fullWidth variant="outlined" className="mb-3" />
+//         </Grid>
+//       </Grid>
+
+//       <br />
+
+//       <Container>
+//         {/* <Box
+//           display="flex"
+//           justifyContent="space-between"
+//           alignItems="center"
+//           flexDirection="row"
+//           p={2} // Add padding to the box for spacing
+//         > */}
+
+//           <Box sx={{ display: 'flex', gap: 1 }}>
+
+//             <a href="#" style={{ textDecoration: 'none' }}>
+//               <Button
+//                 variant="contained"
+//                 sx={{ marginRight: 1 }} // Add margin using Material-UI spacing units
+//                 fullWidth
+//               >
+//                 Save
+//               </Button>
+//             </a>
+//           </Box>
+
+//       </Container>
+//     </div>
+//   );
+// };
+
+// export default newJobCreate;
+
+
+
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { Box, Typography, FormControl, Select, MenuItem, Grid, TextField, Button, Container } from '@mui/material';
+
+// const NewJobCreate = () => {
+//   const [jobData, setJobData] = useState({
+//     selectedCustomer: '',
+//     jobNumber: '',
+//     jobStartDate: '',
+//     jobCompletionDate: '',
+//     jobSummary: '',
+//     gatePassType: '',
+//     gatePassNumber: '',
+//     clientJobRequester: '',
+//     transactionType: '',
+//     researcherName: '',
+//     actualWeight: '',
+//     pickupLocation: '',
+//     packageType: '',
+//     deliveryLocation: ''
+//   });
+
+//   // Function to retrieve job data from local storage and set the jobData state
+//   const fetchJobDataFromLocalStorage = () => {
+//     const savedData = localStorage.getItem('registrationData');
+//     if (savedData) {
+//       const parsedData = JSON.parse(savedData);
+//       if (parsedData.length > 0) {
+//         // Assuming you want to display data for the first job in the array
+//         const firstJob = parsedData[0];
+//         setJobData(firstJob);
+//       }
+//     }
+//   };
+
+//   // Use useEffect to fetch and set job data when the component mounts
+//   useEffect(() => {
+//     fetchJobDataFromLocalStorage();
+//   }, []);
+
+//   return (
+//     <div>
+//       <Box className="tab-pane fade show active" role="tabpanel">
+//         <Typography variant="h4" mt={4}>
+//           Job Information
+//         </Typography>
+//         <Typography variant="h5" mt={2}>
+//           Create Job
+//         </Typography>
+
+//         <FormControl fullWidth margin="normal">
+//           <Typography variant="subtitle1">{jobData.selectedCustomer} </Typography>
+//           <Select defaultValue="TSL-R AND D" variant="outlined">
+//             <MenuItem value="TSL-R AND D">TSL-R AND D</MenuItem>
+//             <MenuItem value="1">TATA LONG PRODUCTS</MenuItem>
+//             <MenuItem value="2">DB SHANKER</MenuItem>
+//             <MenuItem value="3">TCI India</MenuItem>
+//           </Select>
+//         </FormControl>
+//       </Box>
+
+//       <Grid container spacing={3}>
+//         <Grid item xs={4}>
+//           <TextField label="Job Number" value={jobData.jobNumber} fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={4}>
+//           <TextField label="Job Start Date" value={jobData.jobStartDate} fullWidth variant="outlined" />
+//         </Grid>
+
+//         <Grid item xs={4}>
+//           <TextField label="Job Completion Date" value={jobData.jobCompletionDate} fullWidth variant="outlined" />
+//         </Grid>
+
+
+
+        
+
+
+
+
+//       </Grid>
+
+//       <br />
+
+//       <Container>
+//         <Box sx={{ display: 'flex', gap: 1 }}>
+//           <a href="#" style={{ textDecoration: 'none' }}>
+//             <Button
+//               variant="contained"
+//               sx={{ marginRight: 1 }}
+//               fullWidth
+//             >
+//               Save
+//             </Button>
+//           </a>
+//         </Box>
+//       </Container>
+//     </div>
+//   );
+// };
+
+// export default NewJobCreate;

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  
+  <input type="text" id="display" readonly>
+  <br>
+  <button id="clear">C</button>
+  <button id="backspace">←</button>
+  <button id="divide">/</button>
+  <br>
+  <button id="seven">7</button>
+  <button id="eight">8</button>
+  <button id="nine">9</button>
+  <button id="multiply">*</button>
+  <br>
+  <button id="four">4</button>
+  <button id="five">5</button>
+  <button id="six">6</button>
+  <button id="subtract">-</button>
+  <br>
+  <button id="one">1</button>
+  <button id="two">2</button>
+  <button id="three">3</button>
+  <button id="add">+</button>
+  <br>
+  <button id="zero">0</button>
+  <button id="decimal">.</button>
+  <button id="equals">=</button>
+
+  <script>
+    // Initialize variables
+    let display = document.getElementById("display");
+    let clearButton = document.getElementById("clear");
+    let backspaceButton = document.getElementById("backspace");
+    let divideButton = document.getElementById("divide");
+    let multiplyButton = document.getElementById("multiply");
+    let subtractButton = document.getElementById("subtract");
+    let addButton = document.getElementById("add");
+    let equalsButton = document.getElementById("equals");
+
+    let numberButtons = [
+      document.getElementById("zero"),
+      document.getElementById("one"),
+      document.getElementById("two"),
+      document.getElementById("three"),
+      document.getElementById("four"),
+      document.getElementById("five"),
+      document.getElementById("six"),
+      document.getElementById("seven"),
+      document.getElementById("eight"),
+      document.getElementById("nine"),
+    ];
+
+    let decimalButton = document.getElementById("decimal");
+
+    // Event listeners for number buttons
+    numberButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        display.value += button.innerText;
+      });
+    });
+
+    // Event listener for the decimal button
+    decimalButton.addEventListener("click", () => {
+      if (!display.value.includes(".")) {
+        display.value += ".";
+      }
+    });
+
+    // Event listener for the clear button
+    clearButton.addEventListener("click", () => {
+      display.value = "";
+    });
+
+    // Event listener for the backspace button
+    backspaceButton.addEventListener("click", () => {
+      display.value = display.value.slice(0, -1);
+    });
+
+    // Event listener for the operator buttons
+    divideButton.addEventListener("click", () => {
+      display.value += "/";
+    });
+
+    multiplyButton.addEventListener("click", () => {
+      display.value += "*";
+    });
+
+    
+
+    subtractButton.addEventListener("click", () => {
+      display.value += "-";
+    });
+
+    addButton.addEventListener("click", () => {
+      display.value += "+";
+    });
+
+    // Event listener for the equals button
+    equalsButton.addEventListener("click", () => {
+      try {
+        display.value = eval(display.value);
+      } catch (error) {
+        display.value = "Error";
+      }
+    });
+  </script>
+</body>
+</html>

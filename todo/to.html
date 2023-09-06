@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <input type="text" id="task" placeholder="Add a new task">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        let editMode = false;
+        let taskToEdit = null;
+
+        // Function to add a new task
+        function addTask() {
+            const taskText = document.getElementById("task").value;
+            if (taskText === "") return; // Don't add empty tasks
+
+            const taskList = document.getElementById("taskList");
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${taskText}</span>
+                <button class="edit-button" onclick="editTask(this)">Edit</button>
+                <button class="delete-button" onclick="removeTask(this)">Delete</button>
+            `;
+            taskList.appendChild(li);
+
+            // Clear the input field after adding a task
+            document.getElementById("task").value = "";
+        }
+
+        // Function to remove a task
+        function removeTask(buttonElement) {
+            const taskList = document.getElementById("taskList");
+            const li = buttonElement.parentElement;
+            taskList.removeChild(li);
+        }
+
+        // Function to edit a task
+        function editTask(buttonElement) {
+            if (editMode) return;
+
+            const taskList = document.getElementById("taskList");
+            const li = buttonElement.parentElement;
+            const taskText = li.querySelector('span');
+
+            // Save the task text and switch to edit mode
+            taskToEdit = taskText.textContent;
+            taskText.innerHTML = `<input type="text" value="${taskToEdit}">`;
+            buttonElement.textContent = "Save";
+            editMode = true;
+        }
+
+        // Function to save changes to a task in edit mode
+        function saveTask(buttonElement) {
+            const li = buttonElement.parentElement;
+            const taskText = li.querySelector('input');
+
+            // Update the task text and switch back to view mode
+            taskToEdit = taskText.value;
+            taskText.outerHTML = `<span>${taskToEdit}</span>`;
+            buttonElement.textContent = "Edit";
+            editMode = false;
+        }
+    </script>
+</body>
+
+</html>

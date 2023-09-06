@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Add some basic styles for the to-do list items */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .edit-btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <input type="text" id="task" placeholder="Add a new task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList">
+    </ul>
+
+    <script>
+        const taskList = document.getElementById("taskList");
+        const taskInput = document.getElementById("task");
+
+        function addTask() {
+            const taskText = taskInput.value;
+            if (taskText.trim() === "") return;
+
+            const li = document.createElement("li");
+            li.innerHTML = `${taskText} <button class="edit-btn" onclick="editTask(this)">Edit</button> <button class="delete-btn" onclick="deleteTask(this)">Delete</button>`;
+            taskList.appendChild(li);
+
+            taskInput.value = "";
+        }
+
+        function editTask(button) {
+            const li = button.parentElement;
+            const newText = prompt("Edit task:", li.firstChild.textContent);
+            if (newText !== null) {
+                li.firstChild.textContent = newText;
+            }
+        }
+
+        function deleteTask(button) {
+            const li = button.parentElement;
+            taskList.removeChild(li);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+        integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+</head>
+
+<body>
+    <div class="toggle"></div>
+
+    <div class="menu">
+        <ul>
+            <li class="active"><i class='bx bxs-dashboard'></i><a href="">Dashboard</a></li>
+            <li><i class='bx bx-list-ol'></i><a href="">New Jobs</a></li>
+            <li><i class='bx bx-list-check'></i><a href="">Job List</a></li>
+            <li><i class='bx bxs-briefcase'></i><a href="">Plan Jobs</a></li>
+            <li><i class='bx bx-list-plus'></i><a href="closing_jobs.html">Close Jobs</a></li>
+            <li><i class='bx bx-border-all'></i><a href="">Work Order Line</a></li>
+            <li><i class='bx bx-border-all'></i><a href="">Return List</a></li>
+            <li><i class='bx bxl-deezer'></i><a href="">Reportsr</a></li>
+            <li><i class='bx bxs-cog'></i><a href="">Setting</a></li>
+        </ul>
+    </div>
+
+
+    <section class="loginDiv container">
+
+
+        <div class="side">
+            <img src="images/OWM_Final.png" />
+
+            <nav>
+                <ul class="ps-0">
+                    <li class="active"><i class='bx bxs-dashboard'></i><a href="#">Dashboard</a></li>
+                    <li><i class='bx bx-list-ol'></i><a href="#">New Jobs</a></li>
+                    <li><i class='bx bx-list-check'></i><a href="#">Job List</a></li>
+                    <li><i class='bx bxs-briefcase'></i><a href="#">Plan Jobs</a></li>
+                    <li><i class='bx bx-list-plus'></i><a href="#">Close Jobs</a></li>
+                    <li><i class='bx bx-border-all'></i><a href="#">Work Order Line</a></li>
+                    <li><i class='bx bx-border-all'></i><a href="#">Return List</a></li>
+                    <li><i class='bx bxl-deezer'></i><a href="#">Reportsr</a></li>
+                    <li><i class='bx bxs-cog'></i><a href="#">Setting</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <div class="sideOne cnj mt-5">
+            <div class="row">
+                <div class="o-panel pt-3">
+                    <ul>
+                        <li><a href=""><i class='bx bx-phone-call'></i></a></li>
+                        <li><a href=""><i class='bx bx-comment-dots'></i></a></li>
+                        <li><a href=""><i class='bx bx-bell'></i></a></li>
+                        <li><a href=""><img src="images/man.jpg" /></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h3>Finish Planning Jobs</h3>
+                    <!--  <span>J1445678</span> -->
+                </div>
+                <div class="col-lg-6 text-end">
+                    <a href=""><button
+                            class="cnjcancel btn text-light cancel px-3 py-2 border-0 rounded-1 text-uppercase">cancel</button></a>
+                    <a href=""><button
+                            class="cnjsave btn text-light cancel px-3 py-2 border-0 rounded-1 text-uppercase">save</button></a>
+                </div>
+            </div>
+
+
+            <div class="highlight_part py-4 px-3">
+                <h6 class="text-uppercase">Welcome to OWM R&D Application</h6>
+            </div>
+
+            <div class="section_one pt-3 ps-3 pe-3 pb-3 mt-3">
+                <div class="row">
+                    <div class="col-lg-6">
+
+                    </div>
+                </div>
+
+
+
+
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true"><span>
+                                <i class="fa-solid fa-circle-check"></i>
+                            </span>Summery</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">To-Do List</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Related</button>
+                    </li>
+                    <li class="nav-item mt-2 ms-5 job_status" role="presentation">
+                        <a href="" class="text-decoration-none fs-6">Job Status <span class="rounded-2">Open</span></a>
+                    </li>
+                </ul>
+
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab">
+                        <div class="first">
+                            <h4 class="mt-4">Job Info</h4>
+                            <h5 class="text-uppercase mb-4 ">Give valid user information</h5>
+                            <div class="first_nav">
+                                <div class="row">
+
+                                    <div class="col-lg-6">
+                                        <form>
+                                            <div class="mb-3">
+                                                <label for="exampleInputEmail1" class="form-label">Job Number</label>
+                                                <input type="email" placeholder="J1233445" class="form-control"
+                                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Job
+                                                    Summery</label>
+                                                <input type="password" placeholder="LDFLDS&2344" class="form-control"
+                                                    id="exampleInputPassword1">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Client | Job
+                                                    Requester</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Mr.Suleman</option>
+                                                    <option value="1">Mr.Suleman</option>
+                                                    <option value="2">Mr.Suleman</option>
+                                                    <option value="3">Mr.Suleman</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Resercher
+                                                    Name</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Bimalash Pothal</option>
+                                                    <option value="1">Bimalash Pothal</option>
+                                                    <option value="2">Bimalash Pothal</option>
+                                                    <option value="3">Bimalash Pothal</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Pickup Location |
+                                                    Address</label>
+                                                <input type="password" placeholder="Mr.Suleman" class="form-control"
+                                                    id="exampleInputPassword1">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="exampleInputPassword1" class="form-label">Package
+                                                    Type</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Bags</option>
+                                                    <option value="1">Bags</option>
+                                                    <option value="2">Bags</option>
+                                                    <option value="3">Bags</option>
+                                                </select>
+                                            </div>
+
+
+
+                                        </form>
+                                    </div>
+                                    
+                                    <div class="col-lg-6">
+                                        <div class="row ms-2">
+                                            <div class="col-lg-5">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Job Start
+                                                        Date</label>
+                                                    <input type="email" placeholder="J1233445" class="form-control"
+                                                        id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 ms-4">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Job Completion
+                                                        Date</label>
+                                                    <input type="email" placeholder="J1233445" class="form-control"
+                                                        id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row ms-2">
+                                            <div class="col-lg-5">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Gate Pass
+                                                        Type</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>ICF</option>
+                                                        <option value="1">ICF</option>
+                                                        <option value="2">ICF</option>
+                                                        <option value="3">ICF</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 ms-4">
+                                                <div class="mb-3 ms-2">
+                                                    <label for="exampleInputEmail1" class="form-label">Gate Pass
+                                                        number</label>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Mr.Suleman</option>
+                                                        <option value="1">Mr.Suleman</option>
+                                                        <option value="2">Mr.Suleman</option>
+                                                        <option value="3">Mr.Suleman</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <form>
+
+                                            <div class="mb-3 ms-2">
+                                                <label for="exampleInputPassword1" class="form-label">Transaction
+                                                    Type</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Inside To Inside</option>
+                                                    <option value="1">Inside To Outside</option>
+                                                    <option value="2">Outside To Outside</option>
+                                                    <option value="3">Outside To inside</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="mb-3 ms-2">
+                                                <label for="exampleInputPassword1" class="form-label">Actual
+                                                    Weight</label>
+                                                <input type="email" placeholder="J1233445" class="form-control"
+                                                    id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            </div>
+
+
+
+
+
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+
+
+                                    </div>
+                                    <div class="col-lg-6 text-end">
+
+
+
+
+                                        <a href=""><button
+                                                class="cnjsave btn text-light cancel px-3 py-2 border-0 rounded-1 text-uppercase">save</button></a>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        ...</div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                        ...</div>
+                </div>
+            </div>
+
+
+            <div class="loggis mt-5 ">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="logistics">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Logistics
+                            </button>
+
+
+
+                        </h2>
+
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="d-flex justify-content-between align-items-ceter">
+                                <p class="mt-3">Vehicles are using for this jobs</p>
+                                <a href=""><button class="btn btn-primary">+Add Logistics</button></a>
+                            </div>
+                            <table class="p-3">
+                                <tr class="ast">
+                                    <th>Vehicle Type</th>
+                                    <th>UoM</th>
+                                    <th>WO L.No</th>
+                                    <th>Task Date</th>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Vehicle Type</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="UoM" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="WO L.No	" />
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Transporter</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+
+
+
+                                </tr>
+
+                                <tr>
+                                    <th>Vehicle No</th>
+                                    <th>Driver</th>
+                                    <th>Normal Packaging</th>
+                                    <th>Trans Cost</th>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Vehicle No	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Driver	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Normal Packaging	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Trans Cost
+                    " />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Transporter</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" placeholder="Transporter
+                    " />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+                
+                <div class="mt-3  accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne1" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                MHE
+                            </button>
+
+
+
+                        </h2>
+
+                        <div id="panelsStayOpen-collapseOne1" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="d-flex justify-content-between align-items-ceter">
+                                <p class="mt-3">Vehicles are using for this jobs</p>
+                                <a href=""><button class="btn btn-primary">+Add Logistics</button></a>
+                            </div>
+
+                            <table class="p-3">
+                                <tr class="ast">
+                                    <th>Vehicle Type</th>
+                                    <th>UoM</th>
+                                    <th>WO L.No</th>
+                                    <th>Task Date</th>
+                                    <th>Transporter</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Vehicle Type</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="UoM" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="WO L.No	" />
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Transporter</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Driver</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <th>Vehicle No</th>
+                                    <th>Driver</th>
+                                    <th>Normal Packaging</th>
+                                    <th>Trans Cost</th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input class="form-control" placeholder="Vehicle No	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Driver" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Normal Packaging	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Trans Cost
+                    " />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="mt-3  accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne2" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Special Packaging Used
+                            </button>
+
+
+
+                        </h2>
+
+                        <div id="panelsStayOpen-collapseOne2" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="d-flex justify-content-between align-items-ceter">
+                                <p class="mt-3">Vehicles are using for this jobs</p>
+                                <a href=""><button class="btn btn-primary">+Add Logistics</button></a>
+                            </div>
+                            <table class="p-3">
+                                <tr class="ast">
+                                    <th>Vehicle Type</th>
+                                    <th>UoM</th>
+                                    <th>WO L.No</th>
+                                    <th>Task Date</th>
+                                    <th>Transporter</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Vehicle Type</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="UoM	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="WO L.No	" />
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Transporter</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Driver</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <th>Vehicle No</th>
+                                    <th>Driver</th>
+                                    <th>Normal Packaging</th>
+                                    <th>Trans Cost</th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input class="form-control" placeholder="Vehicle No	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Driver" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Normal Packaging	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Trans Cost
+                    " />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class=" mt-3 accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne4" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Main Power Uage
+                            </button>
+
+
+
+                        </h2>
+
+                        <div id="panelsStayOpen-collapseOne4" class="accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="d-flex justify-content-between align-items-ceter">
+                                <p class="mt-3">Vehicles are using for this jobs</p>
+                                <a href=""><button class="btn btn-primary">+Add Logistics</button></a>
+                            </div>
+                            <table class="p-3">
+                                <tr class="ast">
+                                    <th>Vehicle Type</th>
+                                    <th>UoM</th>
+                                    <th>WO L.No</th>
+                                    <th>Task Date</th>
+                                    <th>Transporter</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Vehicle Type</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="UoM	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="WO L.No	" />
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Transporter</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+                                    <td>
+                                        <select class="form-select">
+                                            <option selected>Driver</option>
+                                            <option>Option 1</option>
+                                            <option>Option 2</option>
+                                            <option>Option 3</option>
+                                        </select>
+                                    </td>
+
+
+                                </tr>
+
+                                <tr>
+                                    <th>Vehicle No</th>
+                                    <th>Driver</th>
+                                    <th>Normal Packaging</th>
+                                    <th>Trans Cost</th>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input class="form-control" placeholder="Vehicle No" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Driver" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Normal Packaging	" />
+                                    </td>
+
+                                    <td>
+                                        <input class="form-control" placeholder="Trans Cost" />
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div class="text-end my-3">
+                            <a href=""><button class="btn btn-primary px-5">Save</button></a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
